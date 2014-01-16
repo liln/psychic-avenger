@@ -11,6 +11,6 @@ feature "Deleting a Post" do
     end
 
     # Then the post is deleted
-    page.wont_have_content posts(:http).title
+    page.wont_have_content "Intro to HTTP"
   end
 end
