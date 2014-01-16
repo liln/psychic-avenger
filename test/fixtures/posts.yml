@@ -1,0 +1,11 @@
+http:
+  title: Intro to HTTP
+  body: It's all about the request-response cycle.
+
+cf:
+  title: Becoming a Code Fellow
+  body: Means striving for excellence. ;)
+
+bdd:
+  title: Behavior Driven Development
+  body: We are using Sprint.ly to track our user stories.

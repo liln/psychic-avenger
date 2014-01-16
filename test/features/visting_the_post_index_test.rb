@@ -3,12 +3,12 @@ require "test_helper"
 feature "Visting the Post Index" do
   scenario "with existing posts" do
     # Given existing posts
-    Post.create(title: "Becoming a Code Fellow", body: "Means striving for excellence.")
+    # True by the fixture
 
     # When I visit /posts
     visit posts_path
 
     #Then the existing posts should be loaded
-    page.text.must_include "Becoming a Code Fellow"
+    page.text.must_include posts(:bdd).title
   end
 end
