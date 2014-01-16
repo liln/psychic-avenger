@@ -6,8 +6,9 @@ feature "Deleting a Post" do
     visit posts_path
 
     # When the delete link is clicked
-    first(posts(:http).title)
-    click_on "Destroy"
+    within("tr", :text => posts(:http).title) do
+      click_on "Destroy"
+    end
 
     # Then the post is deleted
     page.wont_have_content posts(:http).title
