@@ -3,7 +3,7 @@
 By [Lillian Ng](http://github.com/orangeninjamidget)
 
 ## Description
-This is the start of a portfolio website.
+This is the start of my portfolio website.
 
 ## Screenshot
 ![Screenshot 1](https://www.dropbox.com/s/ek91cpq77gk4i7m/portfolio1.JPG)
