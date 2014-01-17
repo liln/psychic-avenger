@@ -10,6 +10,7 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'sqlite3', '1.3.8'
 gem 'turbolinks', '2.2.0'
 gem 'uglifier', '>= 1.3.0'
+gem "foundation-rails", github: 'codefellows/foundation-rails'
 
 group :doc do
   gem 'sdoc', require: false
@@ -17,4 +18,5 @@ end
 
 group :test do
   gem 'minitest-rails-capybara', '0.10.0'
+  gem 'turn'
 end

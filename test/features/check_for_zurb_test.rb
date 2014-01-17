@@ -4,9 +4,9 @@ feature "Check for Zurb" do
   scenario "load the root page" do
     # Given I load the root
     # When I load the root
-    visit '/'
+    visit root_path
 
     # Zurb is loaded if there are columns
-    response.body.should have_css("div.columns")
+    page.has_css?('div columns')
   end
 end
