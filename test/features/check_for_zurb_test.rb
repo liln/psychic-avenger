@@ -7,6 +7,7 @@ feature "Check for Zurb" do
     visit root_path
 
     # Zurb is loaded if there are columns
-    page.has_css?('div columns')
+    page.has_css?('foundation')
+    page.has_css?('columns')
   end
 end
