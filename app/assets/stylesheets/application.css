@@ -10,6 +10,13 @@
  *
  *= require_self
  *= require foundation_and_overrides
-
+ *
+ *= require foundation
+ *= require foundation.min
+ *= require main
+ *= require app
+ *= require ligature
+ *
  *= require_tree .
  */
+
