@@ -19,7 +19,7 @@ group :doc do
 end
 
 group :production do
-  gem "rails_12factor"
+  gem 'rails_12factor'
 end
 
 group :test do
