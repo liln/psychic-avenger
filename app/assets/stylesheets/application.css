@@ -11,8 +11,8 @@
  *= require_self
  *= require foundation_and_overrides
  *
- * require foundation
- * require foundation.min
+ *= require foundation
+ *= require foundation.min
  *= require main
  * require app
  *
