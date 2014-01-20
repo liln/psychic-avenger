@@ -1,6 +1,10 @@
 language: ruby
 rvm:
-  - 2.1.0
+- 2.1.0
 deploy:
   provider: heroku
-  api_key: ...
+  api_key:
+    secure: DGcihPrZnyCFcI23Y1tAOoqDZP2cJQ+t2R1p/HEPlXwqVdkd2oynYwuQdFNrVjcBq1vfi9auF5prhqoPCRjW4WUDp8ER5iPFqqH9HdAIcAzBzct35h1Xl1UmoJ2AQgZvZ9+4lQliHcrGQNWskTOP9d9trxD04S3EIXSf0j0DCS8=
+  app: lillian-portfolio
+  on:
+    repo: orangeninjamidget/psychic-avenger
