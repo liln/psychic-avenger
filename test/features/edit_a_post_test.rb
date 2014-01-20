@@ -3,7 +3,6 @@ require "test_helper"
 feature "Editing a Post" do
   scenario "submit updates to an existing post" do
     # Given an existing post
-    #post = Post.create(title: "Becoming a Code Fellow", body: "Means striving for excellence.")
     post = posts(:cf)
     visit post_path(post)
 

@@ -1,9 +1,12 @@
 require "test_helper"
 
-class CanAccessHomeTest < Capybara::Rails::TestCase
-  test "sanity" do
+feature "Can access home page" do
+  scenario "root page contains content" do
+    # Given I load the root
+    # When I load the root
     visit '/'
-    assert_content page, "Lillian Ng"
-    refute_content page, "Goobye All!"
+
+    # Page contains portfolio content
+    page.text.must_include "Lillian Ng"
   end
 end
