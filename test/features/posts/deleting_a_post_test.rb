@@ -6,9 +6,7 @@ feature "Deleting a Post" do
     visit posts_path
 
     # When the delete link is clicked
-    within("tr", :text => posts(:http).title) do
-      click_on "Destroy"
-    end
+    page.find("a[href='#{post_path(posts(:http))}'][data-method='delete']").click
 
     # Then the post is deleted
     page.wont_have_content "Intro to HTTP"
