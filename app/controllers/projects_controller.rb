@@ -27,9 +27,11 @@ class ProjectsController < ApplicationController
   end
 
   def update
-
     if @project.update_attributes(project_params)
       redirect_to @project, notice: "Project was successfully updated."
+    else
+      flash.now[:error] = "Project could not be saved."
+      render :edit
     end
   end
 
