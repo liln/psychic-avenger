@@ -1,6 +1,7 @@
 Portfolio::Application.routes.draw do
 
   resources :posts
+  resources :projects
 
   get "welcome/index"
 
