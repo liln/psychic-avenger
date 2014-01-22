@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :edit, :update]
+  before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   def index
     @projects = Project.all
@@ -33,6 +33,11 @@ class ProjectsController < ApplicationController
       flash.now[:error] = "Project could not be saved."
       render :edit
     end
+  end
+
+  def destroy
+    @project.destroy
+    redirect_to projects_path
   end
 
   private
