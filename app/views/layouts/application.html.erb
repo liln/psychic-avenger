@@ -23,12 +23,10 @@
         <ul id="menu-header" class="nav-bar horizontal">
 
           <li class=""><a href="<%= root_path %>">Home</a></li>
-          <li class=""><a href="<%= root_path %>#current">Current Activities</a></li>
           <li class=""><a href="<%= root_path %>#aboutme">About Me</a></li>
           <li class=""><a href="<%= projects_path %>">Projects</a></li>
           <li class=""><a href="<%= posts_path %>">Blog</a></li>
           <li class=""><a href="#connect">Connect</a></li>
-
         </ul>
 
         <script type="text/javascript">
@@ -42,11 +40,25 @@
 
 </nav>
 
-    <% flash.each do |key, value| %>
-      <div class="alert-box round <%= flash_class(key) %>">
-        <%= value %>
+  <% if flash.empty? == 0 || notice.nil? == 0 || alert.nil? == 0 %>
+    <section class="section_light">
+      <div class="twelve columns">
+        <% flash.each do |key, value| %>
+          <div class="alert-box round <%= flash_class(key) %>">
+            <%= value %>
+          </div>
+        <% end %>
+        <% if notice.nil? == 0 %>
+          <p class="notice"><%= notice %></p>
+        <% end %>
+        <% if alert.nil? == 0 %>
+          <p class="alert"><%= alert %></p>
+        <% end %>
       </div>
-    <% end %>
+    </section>
+  <% end %>
+
+
 
     <%= yield %>
 
@@ -71,8 +83,18 @@
 
       <div class="row">
 
-          <div class="twelve columns footer">
+          <div class="six columns footer">
             Copyright &copy; 2014. Lillian Ng
+          </div>
+
+          <div class="six columns footer">
+          <% if current_user.present? %>
+            Signed in as <%= current_user.email %>.
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+          <% else %>
+            <%= link_to "Sign Up", new_user_registration_path %>
+            <%= link_to "Sign In", new_user_session_path %>
+          <% end %>
           </div>
 
       </div>
