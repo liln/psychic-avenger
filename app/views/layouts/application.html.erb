@@ -40,14 +40,16 @@
 
 </nav>
 
-  <% if flash.empty? == 0 || notice.nil? == 0 || alert.nil? == 0 %>
-    <section class="section_light">
-      <div class="twelve columns">
         <% flash.each do |key, value| %>
           <div class="alert-box round <%= flash_class(key) %>">
             <%= value %>
           </div>
         <% end %>
+
+  <% if flash.empty? == 0 || notice.nil? == 0 || alert.nil? == 0 %>
+    <section class="section_light">
+      <div class="twelve columns">
+
         <% if notice.nil? == 0 %>
           <p class="notice"><%= notice %></p>
         <% end %>

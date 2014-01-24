@@ -2,6 +2,7 @@ require "test_helper"
 
 feature "As a site owner, I want to edit my projects so that I can correct typos" do
   scenario "edit an existing project" do
+    sign_in
     visit edit_project_path(projects(:portfolio))
 
     fill_in "Name", with: "My Rad Portfolio"
@@ -13,6 +14,7 @@ feature "As a site owner, I want to edit my projects so that I can correct typos
   end
 
   scenario "incorrectly editing an existing project" do
+    sign_in
     visit edit_project_path(projects(:portfolio))
 
     fill_in "Name", with: "Q"
