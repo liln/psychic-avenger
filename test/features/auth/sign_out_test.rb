@@ -2,9 +2,9 @@ require "test_helper"
 
 feature "As a site user, I want to be able to sign in and out so that not everyone has access to my account." do
   scenario "sign in and sign out" do
-    sign_in
+    sign_in(:author)
 
-    page.must_have_content users(:one).email
+    page.must_have_content users(:author).email
     page.wont_have_content "Sign In"
 
     click_on "Sign Out"

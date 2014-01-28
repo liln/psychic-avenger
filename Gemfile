@@ -8,6 +8,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'jquery-rails', '3.0.4'
 gem 'minitest-rails', '0.9.2'
 gem 'pg'
+gem 'pundit', '0.2.1'
 gem 'rake', '10.1.1'
 gem 'rails', '4.0.2'
 gem 'sass-rails', '~> 4.0.0'
@@ -24,6 +25,7 @@ group :production do
 end
 
 group :test do
-  gem 'minitest-rails-capybara', '0.10.0'
+  gem 'minitest-rails-capybara'
+  gem 'launchy'
   gem 'turn'
 end

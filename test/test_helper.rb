@@ -4,15 +4,15 @@ require "rails/test_help"
 require "minitest/rails"
 require "minitest/rails/capybara"
 
-Turn.config.trace = 3
+Turn.config.trace = 2
 Turn.config.format = :outline
 
 class ActiveSupport::TestCase
   fixtures :all
 
-  def sign_in
+  def sign_in(role = :editor)
     visit new_user_session_path
-    fill_in "Email", with: users(:one).email
+    fill_in "Email", with: users(role).email
     fill_in "Password", with: "password"
     click_on "Sign in"
   end
