@@ -26,10 +26,10 @@ class PostPolicy < ApplicationPolicy
     def resolve
       if user.nil?
         scope.where(published: true)
-      elsif user.editor? || user.author?
+      elsif user.editor?
         scope.all
-      else
-        scope.where(published: true)
+      elsif user.author?
+        scope.where(author: user)
       end
     end
   end

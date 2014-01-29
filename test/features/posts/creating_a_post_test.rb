@@ -1,7 +1,7 @@
 require "test_helper"
 
 feature "Creating a Post" do
-  scenario "submit form data to create a new post" do
+  scenario "author submits form data to create a new post" do
     # Given an authorized user completes a new post form
     sign_in(:author)
 
