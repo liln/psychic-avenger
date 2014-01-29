@@ -2,8 +2,6 @@ require "test_helper"
 
 feature "Check for theme" do
   scenario "root page contains navigation header and footer" do
-    # Given I load the root
-    # When I load the root
     visit root_path
 
     # Base 2013 theme is loaded if there is navigation, header, and footer

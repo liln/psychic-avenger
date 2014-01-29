@@ -1,14 +1,9 @@
 require "test_helper"
 
-feature "Visting the Post Index" do
-  scenario "with existing posts" do
-    # Given existing posts
-    # True by the fixture
-
-    # When I visit /posts
+feature "Visiting the Post Index" do
+  scenario "unauthorized site user visits post index" do
     visit posts_path
-
-    #Then the existing posts should be loaded
     page.text.must_include posts(:bdd).title
+    page.text.wont_include posts(:cr).title
   end
 end

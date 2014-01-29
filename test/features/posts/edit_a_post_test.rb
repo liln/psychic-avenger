@@ -1,9 +1,9 @@
 require "test_helper"
 
 feature "Editing a Post" do
-  scenario "submit updates to an existing post" do
+  scenario "author submit updates to an existing post" do
     # Given an existing post
-    sign_in
+    sign_in(:author)
     post = posts(:cf)
     visit post_path(post)
 
@@ -15,5 +15,10 @@ feature "Editing a Post" do
     # Then the post is updated
     page.text.must_include "Post was successfully updated"
     page.text.must_include "Becoming a Web Developer"
+  end
+
+  scenario "unauthenticated site vistors cannot edit posts" do
+    visit posts_path
+    page.wont_have_content "Edit"
   end
 end

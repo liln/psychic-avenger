@@ -1,7 +1,8 @@
 require "test_helper"
 
 feature "Deleting a Post" do
-  scenario "post is deleted with a click" do
+  scenario "editors can delete post with a click" do
+    sign_in(:editor)
     # Given an existing post
     visit posts_path
 
@@ -11,4 +12,16 @@ feature "Deleting a Post" do
     # Then the post is deleted
     page.wont_have_content "Intro to HTTP"
   end
+
+  scenario "unauthenticated site vistors cannot delete posts" do
+    visit posts_path
+    page.wont_have_content "Destroy"
+  end
+
+  scenario "authors cannot delete posts" do
+    sign_in(:author)
+    visit posts_path
+    page.wont_have_content "Destroy"
+  end
+
 end

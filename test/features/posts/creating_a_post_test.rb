@@ -6,21 +6,21 @@ feature "Creating a Post" do
     sign_in(:author)
 
     visit new_post_path
-    fill_in "Title", with: posts(:cr).title
-    fill_in "Body", with: posts(:cr).body
+    fill_in "Title", with: posts(:cf).title
+    fill_in "Body", with: posts(:cf).body
 
     # When I submit the form
     click_on "Create Post"
 
     # Then a new post should be created and displayed
     page.text.must_include "Post was successfully created"
-    page.text.must_include posts(:cr).title
+    page.text.must_include posts(:cf).title
     assert page.has_css? "#author"
     page.text.must_include users(:author).email
     page.text.must_include "Status: Unpublished"
   end
 
-  scenario "unauthenticated site vistors cannot create new posts" do
+  scenario "unauthenticated site visitors cannot create new posts" do
     visit new_post_path
     page.must_have_content "You need to sign in or sign up before continuing"
   end
