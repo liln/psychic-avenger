@@ -9,9 +9,11 @@
   <strong>By:</strong> <%= @post.author.email %>
 </p>
 
-<p id="status">
-  <strong>Status:</strong> <%= @post.published? ? "Published" : "Unpublished" %>
-</p>
+<% if current_user.present? %>
+  <p id="status">
+    <strong>Status:</strong> <%= @post.published? ? "Published" : "Unpublished" %>
+  </p>
+<% end %>
 
 <p>
   <strong>Body:</strong>

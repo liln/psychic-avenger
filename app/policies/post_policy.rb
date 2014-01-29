@@ -22,6 +22,14 @@ class PostPolicy < ApplicationPolicy
     @user.editor? unless @user.nil?
   end
 
+  def permitted_attributes
+    if @user.editor?
+      [:title, :body, :published]
+    else
+      [:title, :body]
+    end
+  end
+
   class Scope < Struct.new(:user, :scope)
     def resolve
       if user.nil?

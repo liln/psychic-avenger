@@ -9,3 +9,8 @@
                       password: "password",
                       password_confirmation: "password",
                       role: "editor")
+
+@author = User.create(email: "author@example.com",
+                      password: "password",
+                      password_confirmation: "password",
+                      role: "author")
