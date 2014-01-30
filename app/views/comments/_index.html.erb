@@ -1,0 +1,12 @@
+<h3>Comments</h3>
+<% if !@comments.nil? %>
+  <% @comments.each do |comment| %>
+    <p>
+      <%= link_to comment.author, comment.author_url %>
+    </p>
+
+    <p>
+      <%= comment.content %>
+    </p>
+  <% end %>
+<% end %>

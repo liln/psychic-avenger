@@ -1,6 +1,6 @@
 require "test_helper"
 
-feature "As a site user, I want to be able to sign in and out so that not everyone has access to my account." do
+feature "Authentication / Sign In and Out" do
   scenario "sign in and sign out" do
     sign_in(:author)
 

@@ -1,6 +1,6 @@
 require "test_helper"
 
-feature "As a site visitor, I want to see a developer's portfolio" do
+feature "Project / View Projects - Portfolio Index" do
   scenario "viewing all projects" do
     visit projects_path
 

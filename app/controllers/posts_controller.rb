@@ -5,12 +5,14 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = policy_scope(Post.all)
+    @posts = policy_scope(Post)
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @comments = @post.comments
+    @comment = @post.comments.build
   end
 
   # GET /posts/new

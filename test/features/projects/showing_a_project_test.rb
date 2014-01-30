@@ -1,6 +1,6 @@
 require "test_helper"
 
-feature "As a site visitor, I want to view project details" do
+feature "Project / Show A Project" do
   scenario "viewing a single project" do
     visit project_path(projects(:portfolio))
 

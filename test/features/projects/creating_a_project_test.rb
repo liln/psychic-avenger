@@ -1,6 +1,6 @@
 require "test_helper"
 
-feature "As a site owner, I want to add a portfolio item so that I can show off my work" do
+feature "Projects / Creating A Project" do
   scenario "add a new project" do
     sign_in
     visit projects_path

@@ -1,6 +1,6 @@
 require "test_helper"
 
-feature "Deleting a Post" do
+feature "Posts / Deleting a Post" do
   scenario "editors can delete post with a click" do
     sign_in(:editor)
     # Given an existing post

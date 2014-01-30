@@ -1,6 +1,6 @@
 require "test_helper"
 
-feature "As a site user, I want to be able to sign up for an account so that I can perform actions that require me to be logged in." do
+feature "Authentication / Sign Up" do
   scenario "sign up" do
     # Given a registration form
     visit root_path

@@ -1,6 +1,6 @@
 require "test_helper"
 
-feature "Deleting a Project" do
+feature "Project / Deleting a Project" do
   scenario "post is deleted from index with a click" do
     sign_in
     visit projects_path

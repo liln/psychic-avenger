@@ -17,3 +17,6 @@
 
 # Ignore Coverage generated reports
 /coverage
+
+# Ignore application configuration
+/config/application.yml

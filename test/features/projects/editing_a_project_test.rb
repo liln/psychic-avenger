@@ -1,6 +1,6 @@
 require "test_helper"
 
-feature "As a site owner, I want to edit my projects so that I can correct typos" do
+feature "Projects / Edit a Project" do
   scenario "edit an existing project" do
     sign_in
     visit edit_project_path(projects(:portfolio))

@@ -1,6 +1,6 @@
 require "test_helper"
 
-feature "Check for theme" do
+feature "Home / Check for theme" do
   scenario "root page contains navigation header and footer" do
     visit root_path
 

@@ -32,7 +32,7 @@ class PostPolicy < ApplicationPolicy
 
   class Scope < Struct.new(:user, :scope)
     def resolve
-      if user.nil?
+      if user.nil? || user.user?
         scope.where(published: true)
       elsif user.editor?
         scope.all
