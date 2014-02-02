@@ -11,8 +11,8 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @comments = @post.comments
-    @comment = @post.comments.build
+    @comments = policy_scope(@post.comments)
+    @comment = Comment.new(:post => @post)
   end
 
   # GET /posts/new

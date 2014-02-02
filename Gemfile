@@ -5,7 +5,7 @@ ruby '2.1.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise', '3.2.2'
 gem 'figaro'
-gem 'foundation-rails', '~> 5.0.3'
+gem 'foundation-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'jquery-rails', '3.0.4'
 gem 'minitest-rails', '0.9.2'
@@ -31,4 +31,8 @@ group :test do
   gem 'launchy'
   gem 'simplecov'
   gem 'turn'
+end
+
+group :development do
+  gem 'pry-rails'
 end

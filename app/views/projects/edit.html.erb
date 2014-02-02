@@ -1,7 +1,16 @@
-<h1>Editing project</h1>
+<section class="section_main">
+  <div class="row">
+    <div class="twelve columns">
 
-<%= render 'form' %>
 
-<%= link_to 'Cancel Changes', @project %> |
-<%= link_to 'Back to Portfolio', projects_path %> |
-<%= link_to 'Delete Project', @project, method: :delete, data: {confirm: 'Are you sure?'} %>
+        <h1>Editing project</h1>
+
+        <%= render 'form' %>
+
+        <%= link_to 'Cancel Changes', @project %> |
+        <%= link_to 'Back to Portfolio', projects_path %> |
+        <%= link_to 'Delete Project', @project, method: :delete, data: {confirm: 'Are you sure?'} %>
+
+    </div>
+  </div>
+</section>

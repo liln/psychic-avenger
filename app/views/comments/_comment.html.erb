@@ -1,0 +1,20 @@
+<tr>
+  <td>
+    <%= link_to comment.author, comment.author_url %> says:
+  </td>
+  <td>
+    <%= comment.content %>
+  </td>
+  <% if policy(comment).approver? %>
+    <td>
+      <% if !comment.approved? %>
+        <%= form_for [comment.post,comment] do |c| %>
+          <div class="actions">
+            <%= c.submit "Approve" %>
+          </div>
+        <% end %>
+      <% end %>
+      <%= link_to 'Destroy', [comment.post,comment], method: :delete, data: { confirm: 'Are you sure?' } if policy(comment).destroy? %>
+    </td>
+  <% end %>
+</tr>
