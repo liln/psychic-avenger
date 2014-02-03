@@ -5,20 +5,21 @@ feature "Comments / Editing A Comment" do
 
   end
 
-  scenario "author can edit and approve comment" do
+  scenario "author can approve comment" do
     sign_in(:author)
     visit post_path(posts(:http))
-
-    check "Approve"
-    click_on "Edit Comment"
-    page.text.must_have_content comments(:http1).content
+    click_on "Approve"
+    click_on "Sign Out"
+    visit post_path(posts(:http))
+    page.must_have_content comments(:c1).content
   end
 
-  scenario "editor can edit approve comment" do
+  scenario "editor can approve comment" do
     sign_in(:editor)
     visit post_path(posts(:http))
-    check "Approve"
-    click_on "Edit Comment"
-    page.text.must_have_content comments(:http1).content
+    click_on "Approve"
+    click_on "Sign Out"
+    visit post_path(posts(:http))
+    page.must_have_content comments(:c1).content
   end
 end

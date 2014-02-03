@@ -2,12 +2,11 @@ require "test_helper"
 
 feature "Comments / Creating a Comment" do
   scenario "site user can add comments to blog post" do
-    visit post_path(:http)
-    click_on "New Comment"
+    visit post_path(posts(:http))
 
-    fill_in "Comment", with: "This is awesome!"
+    fill_in "comment_content", with: "This is awesome!"
     click_on "Create Comment"
 
-    page.text.must_have_content "Comment was submitted for approval"
+    page.must_have_content "Comment was submitted for approval"
   end
 end

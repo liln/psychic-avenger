@@ -1,6 +1,6 @@
 require "test_helper"
 
-feature "Authentication / Sign In and Out" do
+feature "Authentication / Sign In" do
   scenario "sign in with twitter works" do
     visit root_path
     click_on "Sign In"

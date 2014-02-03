@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/orangeninjamidget/psychic-avenger.png)](https://travis-ci.org/orangeninjamidget/psychic-avenger)
 
-By [Lillian Ng](http://github.com/orangeninjamidget)
+gitBy [Lillian Ng](http://github.com/orangeninjamidget)
 
 ## Description
 This is the start of my portfolio website. There are many issues left outstanding.
