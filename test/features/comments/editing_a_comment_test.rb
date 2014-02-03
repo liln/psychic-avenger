@@ -2,7 +2,9 @@ require "test_helper"
 
 feature "Comments / Editing A Comment" do
   scenario "unauthorized site user cannot edit or approve comment" do
-
+    visit post_path(posts(:http))
+    page.wont_have_content "Approve"
+    page.wont_have_content "Destroy"
   end
 
   scenario "author can approve comment" do
