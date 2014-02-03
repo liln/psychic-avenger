@@ -7,7 +7,7 @@ class CommentPolicy < ApplicationPolicy
   end
 
   def create?
-    @user.exist?
+    !@user.nil?
   end
 
   def update?

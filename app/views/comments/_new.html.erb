@@ -1,2 +1,10 @@
+<% if policy(Comment).create? %>
+
 <p><strong>New Comment</strong></p>
 <%= render 'comments/form' %>
+
+<% else %>
+
+<p>You must log in to post a comment </p>
+
+<% end %>

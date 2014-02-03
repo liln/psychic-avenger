@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.new(post_params)
-    # authorize @comment
+    authorize @comment
 
     respond_to do |format|
       if @comment.save
@@ -19,6 +19,7 @@ class CommentsController < ApplicationController
   end
 
   def update
+    authorize @comment
     @comment.approved = true
 
     respond_to do |format|
@@ -33,7 +34,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    # authorize @comment
+    authorize @comment
 
     @comment.destroy
     respond_to do |format|
