@@ -8,7 +8,7 @@
         <strong>By:</strong> <%= @post.author.email %>
       </p>
 
-      <% if policy(@post).publish? %>
+      <% if policy(@post).create? %>
         <p id="status">
           <strong>Status:</strong> <%= @post.published? ? "Published" : "Unpublished" %>
         </p>
