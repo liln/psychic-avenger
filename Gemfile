@@ -18,6 +18,12 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'pry-rails'
+end
+
 group :doc do
   gem 'sdoc', require: false
 end
@@ -31,8 +37,4 @@ group :test do
   gem 'launchy'
   gem 'simplecov'
   gem 'turn'
-end
-
-group :development do
-  gem 'pry-rails'
 end

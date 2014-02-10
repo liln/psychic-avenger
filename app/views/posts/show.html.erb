@@ -2,15 +2,13 @@
   <div class="row">
     <div class="twelve columns">
 
-      <p id="notice"><%= notice %></p>
-
       <h1><%= @post.title %></h1>
 
       <p id="author">
         <strong>By:</strong> <%= @post.author.email %>
       </p>
 
-      <% if current_user.present? %>
+      <% if policy(@post).publish? %>
         <p id="status">
           <strong>Status:</strong> <%= @post.published? ? "Published" : "Unpublished" %>
         </p>
@@ -20,15 +18,15 @@
         <%= @post.body %>
       </p>
 
+      <%= link_to 'Edit', edit_post_path(@post) if policy(@post).update? %>
+
       <h3>Comments</h3>
       <table>
         <%= render @comments %>
       </table>
       <%= render "comments/new", object: @comment %>
 
-      <%= link_to 'Edit', edit_post_path(@post) %> |
-      <%= link_to 'Back', posts_path %>
-
+      <%= link_to 'Back to Blog', posts_path %>
     </div>
   </div>
 </section>

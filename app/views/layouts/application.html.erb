@@ -15,36 +15,14 @@
 
   <body>
 <a name="#top"></a>
-<nav>
 
-     <div class="twelve columns header_nav">
-     <div class="row">
+<%= render 'layouts/navbar' %>
 
-        <ul id="menu-header" class="nav-bar horizontal">
-
-          <li class=""><a href="<%= root_path %>">Home</a></li>
-          <li class=""><a href="<%= root_path %>#aboutme">About Me</a></li>
-          <li class=""><a href="<%= projects_path %>">Projects</a></li>
-          <li class=""><a href="<%= posts_path %>">Blog</a></li>
-          <li class=""><a href="#connect">Connect</a></li>
-        </ul>
-
-        <script type="text/javascript">
-         //<![CDATA[
-         $('ul#menu-header').nav-bar();
-          //]]>
-        </script>
-
-      </div>
-      </div>
-
-</nav>
-
-        <% flash.each do |key, value| %>
-          <div class="alert-box round <%= flash_class(key) %>">
-            <%= value %>
-          </div>
-        <% end %>
+  <% flash.each do |key, value| %>
+    <div class="alert-box round <%= flash_class(key) %>">
+      <%= value %>
+    </div>
+  <% end %>
 
   <% if flash.empty? == 0 || notice.nil? == 0 || alert.nil? == 0 %>
     <section class="section_light">
@@ -66,7 +44,6 @@
 
 <!-- ######################## Section ######################## -->
 
-    <section class="section_light">
 
           <div class="twelve columns">
             <h3 style="text-align:center"><a name="connect"></a>Connect</h3>
@@ -77,7 +54,7 @@
             </p>
           </div>
 
-    </section>
+
 
 <!-- ######################## Footer ######################## -->
 
