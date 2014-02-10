@@ -6,6 +6,9 @@ class CommentsController < ApplicationController
     @comment = @post.comments.new(post_params)
     authorize @comment
 
+    @comment.author = current_user.name
+    @comment.author_email = current_user.email
+
     respond_to do |format|
       if @comment.save
         format.html { redirect_to @post, notice: 'Comment was submitted for approval.' }
