@@ -1,6 +1,4 @@
-<section class="section_main">
-  <div class="row">
-    <div class="twelve columns">
+<%= render 'layouts/sectionstart' %>
 
       <h3><%= @post.title %></h3>
 
@@ -27,6 +25,4 @@
       <%= render "comments/new", object: @comment %>
 
       <%= link_to 'Back to Blog', posts_path %>
-    </div>
-  </div>
-</section>
+<%= render 'layouts/sectionend' %>

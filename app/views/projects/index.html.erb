@@ -1,27 +1,11 @@
-<section class="section_main">
-  <div class="row">
-    <div class="twelve columns">
+<%= render 'layouts/sectionstart' %>
 
-        <h3>Portfolio of My Projects</h3>
+  <h3>Portfolio of My Projects</h3>
 
-        <% @projects.each do |project| %>
-          <div class='project' id='<%= dom_id(project) %>'>
-          <h3><%= project.name %></h3>
-          <p><%= project.technologies_used %></p>
-          <p><%= project.description %></p>
-            <div class='nav'>
-              <%= link_to 'Show', project %>
-              <% if current_user.present? %>
-                <%= link_to 'Edit', edit_project_path(project) %>
-                <%= link_to 'Destroy', project, method: :delete, data: {confirm: 'Are you sure?'} %>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
+  <ul id="projects">
+    <%= render @projects %>
+  </ul>
 
-        <br />
-        <%= link_to 'New project', new_project_path %>
+  <%= link_to 'New project', new_project_path, id: "new_link", remote: true if current_user.present? %>
 
-    </div>
-  </div>
-</section>
+<%= render 'layouts/sectionend' %>
