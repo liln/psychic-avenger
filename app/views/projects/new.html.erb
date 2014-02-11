@@ -1,13 +1,9 @@
-<section class="section_main">
-  <div class="row">
-    <div class="twelve columns">
+<%= render 'layouts/sectionstart' %>
 
-        <h3>New project</h3>
+  <h3>New project</h3>
 
-        <%= render 'form' %>
+  <%= render 'form' %>
 
-        <%= link_to 'Back to Portfolio', projects_path %>
+  <%= link_to 'Back to Portfolio', projects_path %>
 
-    </div>
-  </div>
-</section>
+<%= render 'layouts/sectionend' %>
