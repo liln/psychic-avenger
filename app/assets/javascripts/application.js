@@ -15,8 +15,13 @@
 //= require foundation
 //= require turbolinks
 //= require app
-//= require foundation.min
 //=
 //= require_tree .
 
+$(document).ajaxError(function(event, xhr, settings, exception) {
+  console.log(xhr)
+  alert(xhr.responseText);
+});
+
 $(function(){ $(document).foundation(); });
+

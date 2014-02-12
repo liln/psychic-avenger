@@ -12,21 +12,15 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    respond_to do |format|
-      format.html do
-        if @project.save
-          flash[:notice] = "Project has been created."
-          redirect_to @project
-        else
-          flash.now[:error] = "Project could not be saved."
-          render :new
-        end
+    if @project.save
+      respond_to do |format|
+        format.html { redirect_to @project, notice: "Project has been created." }
+        format.js { }
       end
-      format.js do
-        if @project.save
-        else
-          render text: @project.errors.full_messages.join(". "), status: :unprocessable_entity
-        end
+    else
+      respond_to do |format|
+        format.html { render :new, error: "Project could not be saved." }
+        format.js { render text: @project.errors.full_messages.join(". "), status: :unprocessable_entity }
       end
     end
   end
@@ -48,8 +42,7 @@ class ProjectsController < ApplicationController
         end
       end
       format.js do
-        if @project.update_attributes(project_params)
-        else
+        unless @project.update_attributes(project_params)
           render text: @project.errors.full_messages.join(". "), status: :unprocessable_entity
         end
       end
@@ -60,7 +53,7 @@ class ProjectsController < ApplicationController
     @project.destroy
     respond_to do |format|
       format.html { redirect_to projects_path }
-      format.js
+      format.js { }
     end
   end
 
