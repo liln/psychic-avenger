@@ -35,6 +35,7 @@ end
 group :test do
   gem 'minitest-rails-capybara'
   gem 'launchy'
+  gem 'poltergeist'
   gem 'simplecov'
   gem 'turn'
 end
