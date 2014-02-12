@@ -24,3 +24,4 @@ en:
   time:
     formats:
       default: "%A, %B %d, %Y at %l:%M %p"
+      short: "%m.%e.%y %l:%M %p"

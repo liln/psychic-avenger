@@ -1,5 +1,0 @@
-pirate:
-  hello: "Ahoy matie"
-  time:
-    formats:
-      default: "%m.%e.%Y"
