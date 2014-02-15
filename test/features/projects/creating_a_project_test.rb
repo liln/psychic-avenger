@@ -4,13 +4,16 @@ feature "Projects / Creating A Project" do
   scenario "add a new project" do
     sign_in
     visit projects_path
+    url = page.current_path
     click_on "New project"
 
+    page.current_path.must_match url
     fill_in "Name", with: "Code Fellows Portfolio"
     fill_in "Technologies used", with: "Rails, Ruby, Foundation, HTML5, CSS3"
     fill_in "Description", with: "This is how I learned RoR web development."
 
     click_on "Create Project"
+    page.current_path.must_match url
 
     # Then a new project should be created and displayed
     page.text.must_include "Project has been created"
@@ -27,9 +30,9 @@ feature "Projects / Creating A Project" do
     # When the form is submitted with a short name and missing technologies_used field
     click_on "Create Project"
 
-    # Ten the form should be displayed again, with an error message
+    # Then the form should be displayed again, with an error message
     current_path.must_match /projects$/
-    page.text.must_include "Project could not be saved"
+    #page.text.must_include "Project could not be saved"
     page.text.must_include "Name is too short"
     page.text.must_include "Technologies used can't be blank"
   end

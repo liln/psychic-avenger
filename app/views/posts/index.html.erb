@@ -1,7 +1,5 @@
 
-<section class="section_main">
-  <div class="row">
-    <div class="twelve columns">
+<%= render 'layouts/sectionstart' %>
 
       <%= link_to 'New Post', new_post_path if current_user.present? %>
 
@@ -12,9 +10,8 @@
         <%= link_to 'Edit', edit_post_path(post) if policy(post).edit? %>
         <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } if policy(post).destroy? %>
 
+        <span class="timestamp"><%= l post.created_at, format: :short %></span>
         <p><%= post.body %></p>
       <% end %>
 
-    </div>
-  </div>
-</section>
+<%= render 'layouts/sectionend' %>

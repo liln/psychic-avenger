@@ -1,0 +1,7 @@
+yr:
+  hello: "Ahoy matie"
+  time:
+    formats:
+      default: "%d/%m/%Y %H:%M:%S %z"
+      short: "%e %B, %H:%M on the clock"
+      long: "%B %d, %Y %H:%M"

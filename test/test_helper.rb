@@ -6,8 +6,11 @@ require File.expand_path("../../config/environment", __FILE__)
 require "rails/test_help"
 require "minitest/rails"
 require "minitest/rails/capybara"
+#require 'capybara/poltergeist'
 
-Turn.config.trace = 3
+#Capybara.javascript_driver = :poltergeist
+
+Turn.config.trace = 5
 Turn.config.format = :outline
 
 class ActiveSupport::TestCase

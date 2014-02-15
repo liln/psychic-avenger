@@ -5,7 +5,7 @@ feature "Project / Deleting a Project" do
     sign_in
     visit projects_path
 
-    page.find("a[href='#{project_path(projects(:portfolio))}'][data-method='delete']").click
+    page.find("a[href='/en#{project_path(projects(:portfolio))}'][data-method='delete']").click
 
     page.wont_have_content "How meta"
   end

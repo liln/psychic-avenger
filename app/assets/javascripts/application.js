@@ -15,8 +15,14 @@
 //= require foundation
 //= require turbolinks
 //= require app
-//= require foundation.min
+//= require browser_timezone_rails/application.js
 //=
 //= require_tree .
 
+$(document).ajaxError(function(event, xhr, settings, exception) {
+  console.log(xhr)
+  alert(xhr.responseText);
+});
+
 $(function(){ $(document).foundation(); });
+
