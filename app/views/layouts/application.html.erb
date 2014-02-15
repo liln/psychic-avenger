@@ -11,12 +11,14 @@
     <%= csrf_meta_tags %>
     <%= javascript_include_tag "application" %>
 
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Playfair+Display:400italic' rel='stylesheet' type='text/css' />
+
   </head>
 
   <body>
 <a name="#top"></a>
 
-<%= render 'layouts/navbar' %>
+<%= render 'navbar' %>
 
   <% flash.each do |key, value| %>
     <div class="alert-box round <%= flash_class(key) %>">
@@ -62,23 +64,17 @@
 
       <div class="row">
 
-          <div class="six columns footer">
+          <div class="twelve columns footer">
             Copyright &copy; 2014. Lillian Ng
           </div>
 
-          <div class="six columns footer">
-          <% if current_user.present? %>
-            Signed in as <%= current_user.email %>.
-            <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-          <% else %>
-            <%= link_to "Sign Up", new_user_registration_path %>
-            <%= link_to "Sign In", new_user_session_path %>
-          <% end %>
-          </div>
+
 
       </div>
 
 </footer>
+
+<script src="../../assets/foundation.min.js"></script>
 
   </body>
 </html>

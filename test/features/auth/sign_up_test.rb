@@ -3,7 +3,7 @@ require "test_helper"
 feature "Authentication / Sign Up" do
   scenario "sign up" do
     # Given a registration form
-    visit root_path
+    visit posts_path
     click_on "Sign Up"
 
     # When I register with valid info
@@ -13,7 +13,8 @@ feature "Authentication / Sign Up" do
     click_on "Sign up"
 
     # Then I should be signed up
-    page.must_have_content "Signed in as test@example.com"
     page.wont_have_content "There was a problem with your sign up"
+    visit posts_path
+    page.must_have_content "Signed in as test@example.com"
   end
 end

@@ -2,7 +2,7 @@ require "test_helper"
 
 feature "Authentication / Sign In" do
   scenario "sign in with twitter works" do
-    visit root_path
+    visit posts_path
     click_on "Sign In"
     OmniAuth.config.test_mode = true
     Capybara.current_session.driver.request.env['devise.mapping'] = Devise.mappings[:user]
