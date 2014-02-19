@@ -6,6 +6,12 @@
 
   <p>Description: <%= @project.description %></p>
 
+  <h4>Comments</h4>
+  <table>
+    <%= render @comments %>
+  </table>
+  <%= render "comments/new", object: @comment %>
+
   <%= link_to 'Back to Portfolio', projects_path %>
 
 <%= render 'layouts/sectionend' %>

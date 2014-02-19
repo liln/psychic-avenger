@@ -17,15 +17,15 @@ feature "Comments / Deleting a Comment" do
 
   scenario "author can delete comments to projects" do
     sign_in(:author)
-    visit post_path(projects(:portfolio))
-    page.find("a[href='#{project_comment_path(posts(:portfolio).id,comments(:c2).id)}'][data-method='delete']").click
+    visit project_path(projects(:portfolio))
+    page.find("a[href='#{project_comment_path(projects(:portfolio).id,comments(:c2).id)}'][data-method='delete']").click
     page.wont_have_content "portfolio is ugly"
   end
 
   scenario "editor can delete comments to projects" do
     sign_in(:editor)
-    visit post_path(projects(:portfolio))
-    page.find("a[href='#{project_comment_path(posts(:portfolio).id,comments(:c2).id)}'][data-method='delete']").click
+    visit project_path(projects(:portfolio))
+    page.find("a[href='#{project_comment_path(projects(:portfolio).id,comments(:c2).id)}'][data-method='delete']").click
     page.wont_have_content "portfolio is ugly"
   end
 end

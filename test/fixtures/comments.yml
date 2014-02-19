@@ -1,11 +1,11 @@
 c1:
   author: somebody
   content: yay http!
-  commentable_id: http (Post)
+  commentable: http (Post)
   approved: false
 
 c2:
   author: somebody
   content: your portfolio is ugly
-  commentable_id: portfolio (Project)
+  commentable: portfolio (Project)
   approved: false
