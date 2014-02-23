@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   has_many :posts, foreign_key: "author_id"
 
+  after_create :assign_user_role
+
   def author?
     role == 'author'
   end
@@ -50,4 +52,10 @@ class User < ActiveRecord::Base
       super
     end
   end
+
+  private
+    def assign_user_role
+      self.role = 'user'
+      self.save
+    end
 end

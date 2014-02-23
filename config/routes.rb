@@ -6,7 +6,9 @@ Portfolio::Application.routes.draw do
     resources :comments
   end
 
-  resources :projects
+  resources :projects do
+    resources :comments
+  end
 
   get "welcome/index"
 

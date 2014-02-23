@@ -26,6 +26,9 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @commentable = @project
+    @comments = policy_scope(@project.comments)
+    @comment = Comment.new
   end
 
   def edit
