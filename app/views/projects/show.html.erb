@@ -1,10 +1,6 @@
 <%= render 'layouts/sectionstart' %>
 
-  <h3><%= @project.name %></h3>
-
-  <p>Technologies used: <%= @project.technologies_used %></p>
-
-  <p>Description: <%= @project.description %></p>
+  <%= render @project %>
 
   <h4>Comments</h4>
   <table>
