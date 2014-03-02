@@ -12,9 +12,10 @@ This is Rails 4 portfolio site with a commentable blog , a commentable project p
 Home Page
 ![Home Page Screenshot](https://dl.dropboxusercontent.com/u/13181175/portfolio1.png)
 
-Blog Posts Page - old!!!
-![Screenshot 2](https://dl.dropboxusercontent.com/u/13181175/portfolio2.jpg)
-cellphone capture of the old posts page. TODO update this
+Blog Posts Page (with different locales)
+![RegularTime Screenshot](https://dl.dropboxusercontent.com/u/13181175/blog-englishtime.png)
+![PirateTime Screenshot](https://dl.dropboxusercontent.com/u/13181175/blog-piratetime.png)
 
 Projects Page -
-![Projects Page Screenshot](https://dl.dropboxusercontent.com/u/13181175/fileupload.png)
+![Projects Page Screenshot](https://dl.dropboxusercontent.com/u/13181175/projects-login.png)
+With image upload to S3 and login options on navigation bar

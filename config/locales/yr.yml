@@ -3,5 +3,5 @@ yr:
   time:
     formats:
       default: "%d/%m/%Y %H:%M:%S %z"
-      short: "%e %B, %H:%M on the clock"
+      short: "%m-%d-%y, %H:%M on dar clock"
       long: "%B %d, %Y %H:%M"
