@@ -15,7 +15,10 @@
 //= require foundation
 // require turbolinks
 //= require app
+<<<<<<< HEAD
 //= require browser_timezone_rails/application.js
+=======
+>>>>>>> master
 //=
 //= require_tree .
 

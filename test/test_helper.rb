@@ -10,7 +10,7 @@ require "minitest/rails/capybara"
 
 #Capybara.javascript_driver = :poltergeist
 
-Turn.config.trace = 5
+Turn.config.trace = 10
 Turn.config.format = :outline
 
 class ActiveSupport::TestCase

@@ -1,0 +1,44 @@
+<nav>
+  <div class="twelve columns header_nav">
+    <div class="row">
+      <ul id="menu-header" class="nav-bar horizontal">
+        <li class=""><a href="<%= root_path %>">Home</a></li>
+        <li class=""><a href="<%= root_path %>#aboutme">About Me</a></li>
+        <li class=""><a href="<%= projects_path %>">Projects</a></li>
+        <li class=""><a href="<%= posts_path %>">Blog</a></li>
+        <li class=""><a href="#connect">Connect</a></li>
+
+        <% if current_user.present? %>
+          <li class="">
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+          </li>
+        <% else %>
+          <li class="has-flyout">
+            <a href="#">Login</a><a href="#" class="flyout-toggle"></a>
+              <ul class="flyout">
+                <li class="has-flyout">
+                  <%= link_to "Sign Up", new_user_registration_path %>
+                </li>
+                <li class="has-flyout">
+                  <%= link_to "Sign In", new_user_session_path %>
+                </li>
+              </ul>
+          </li>
+        <% end %>
+      </ul>
+
+        <script type="text/javascript">
+         //<![CDATA[
+         $('ul#menu-header').nav-bar();
+          //]]>
+        </script>
+
+    </div>
+  </div>
+</nav>
+
+<% if current_user.present? %>
+  <div class="right">
+    Signed in as <%= current_user.email %>.
+  </div>
+<% end %>
