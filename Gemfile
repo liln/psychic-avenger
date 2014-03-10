@@ -2,17 +2,20 @@ source 'https://rubygems.org'
 
 ruby '2.1.0'
 
+gem 'carrierwave'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise', '3.2.2'
 gem 'figaro'
+gem 'fog'
 gem 'foundation-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'jquery-rails', '3.0.4'
 gem 'minitest-rails', '0.9.2'
+gem 'mini_magick'
 gem 'omniauth-twitter'
 gem 'pg'
 gem 'pundit', '0.2.1'
-gem 'rails', '4.0.2'
+gem 'rails', '4.0.3'
 gem 'rake', '10.1.1'
 gem 'sass-rails', '~> 4.0.0'
 gem 'turbolinks'
@@ -21,6 +24,7 @@ gem 'uglifier', '>= 1.3.0'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'brakeman', require: false
   gem 'pry-rails'
 end
 
